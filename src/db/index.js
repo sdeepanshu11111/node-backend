@@ -7,7 +7,10 @@ const connectDB = async () => {
       `${process.env.MONGODB_URL}/${DB_NAME}`
     );
 
-    console.log("Connected to DB", conectionInstance.connection.host);
+    console.log(
+      "Connected to DB \n",
+      conectionInstance.connection.collection()
+    );
   } catch (err) {
     console.log(err);
     process.exit(1);
